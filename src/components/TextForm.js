@@ -17,11 +17,13 @@ export default function TextForm(props) {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text Copied!","success");
     }
 
     const handlespaces = () =>{
         let newText= text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert("Text Cleared!!","success");
     }
 
     
